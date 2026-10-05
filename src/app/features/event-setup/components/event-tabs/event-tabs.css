@@ -1,0 +1,7 @@
+.event-tabs {
+  width: 100%;
+}
+
+::ng-deep .event-tabs .mat-mdc-tab-header {
+  width: fit-content;
+}

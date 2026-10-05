@@ -1,1 +1,21 @@
-<p>general-tab works!</p>
+<div class="general-tab">
+  <div class="tab-body">
+    <div class="field">
+      <label class="label-field" for="eventName">Event Name</label>
+
+      <input id="eventName" type="text" placeholder="Enter event name" />
+    </div>
+
+    <div class="field">
+      <label class="label-field" for="description">Description</label>
+
+      <textarea id="description" placeholder="Enter event description"></textarea>
+    </div>
+  </div>
+
+  <div class="schedule-section">
+    <h3>Schedule</h3>
+
+    <app-schedule [formField]="eventForm().schedule" />
+  </div>
+</div>

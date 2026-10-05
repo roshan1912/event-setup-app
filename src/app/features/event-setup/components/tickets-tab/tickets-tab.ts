@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-tickets-tab',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './tickets-tab.html',
   styleUrl: './tickets-tab.css',
 })
-export class TicketsTab {}
+export class TicketsTab {
+  eventForm = input.required<any>();
+}

@@ -1,3 +1,9 @@
-<app-general-tab></app-general-tab>
+<mat-tab-group class="event-tabs">
+  <mat-tab label="General">
+    <app-general-tab [eventForm]="eventForm()" />
+  </mat-tab>
 
-<app-tickets-tab></app-tickets-tab>
+  <mat-tab label="Tickets">
+    <app-tickets-tab [eventForm]="eventForm()" />
+  </mat-tab>
+</mat-tab-group>

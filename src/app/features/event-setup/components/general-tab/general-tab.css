@@ -1,0 +1,22 @@
+.general-tab {
+  padding: 20px 24px;
+}
+
+.tab-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 400px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+}

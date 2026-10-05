@@ -1,1 +1,38 @@
-<p>schedule works!</p>
+<div class="schedule">
+  <div class="field">
+    <label for="date">Date</label>
+    <input
+      id="date"
+      type="date"
+      [value]="date()"
+      [disabled]="disabled()"
+      (input)="date.set($any($event.target).value); updateValue()"
+      (blur)="markTouched()"
+    />
+  </div>
+
+  <div class="field">
+    <label for="startTime">Start Time</label>
+    <input
+      id="startTime"
+      type="time"
+      [value]="startTime()"
+      [disabled]="disabled()"
+      (input)="startTime.set($any($event.target).value); updateValue()"
+      (blur)="markTouched()"
+    />
+  </div>
+
+  <div class="field">
+    <label for="duration">Duration (minutes)</label>
+    <input
+      id="duration"
+      type="number"
+      min="1"
+      [value]="duration() ?? ''"
+      [disabled]="disabled()"
+      (input)="duration.set(+$any($event.target).value || null); updateValue()"
+      (blur)="markTouched()"
+    />
+  </div>
+</div>
