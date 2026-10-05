@@ -48,11 +48,4 @@ export class EventSetup {
       return null;
     });
   });
-
-  constructor() {
-    effect(() => {
-      console.log('Event model:', this.eventModel());
-      console.log('Form valid:', this.eventForm().valid());
-    });
-  }
 }
