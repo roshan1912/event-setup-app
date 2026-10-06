@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { form, validate } from '@angular/forms/signals';
 import { EventTabs } from './components/event-tabs/event-tabs';
 
@@ -75,7 +75,6 @@ export class EventSetup {
     if (!this.eventForm().valid()) {
       return;
     }
-
     console.log('Submitted event:', this.eventModel());
   }
 }

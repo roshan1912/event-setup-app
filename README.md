@@ -291,14 +291,6 @@ The project uses Vitest as the test runner through the Angular CLI.
 
 ---
 
-# End-to-End Tests
-
-No end-to-end testing framework has been added to this project because the assessment focuses on the custom form controls and their unit tests.
-
-If e2e testing is required, Angular CLI supports adding a suitable e2e framework.
-
----
-
 # Additional Resources
 
 For more information about Angular CLI:
