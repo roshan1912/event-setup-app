@@ -1,1 +1,13 @@
-<app-event-tabs [eventForm]="eventForm" />
+<div class="event-setup">
+  <app-event-tabs [eventForm]="eventForm" />
+
+  <div class="actions">
+    <button
+      type="button"
+      [disabled]="!eventForm().valid()"
+      (click)="onSubmit()"
+    >
+      Submit Event
+    </button>
+  </div>
+</div>

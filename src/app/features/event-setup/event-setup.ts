@@ -17,7 +17,7 @@ export class EventSetup {
       startTime: '',
       duration: 0,
     },
-    ticketTiers: [],
+    ticketTiers: [] as { label: string; price: number }[],
   });
 
   eventForm = form(this.eventModel, (path) => {
@@ -47,5 +47,41 @@ export class EventSetup {
 
       return null;
     });
+
+    validate(path.ticketTiers, ({ value }) => {
+      const tiers = value();
+
+      if (tiers.length === 0) {
+        return {
+          kind: 'required',
+          message: 'At least one ticket tier is required',
+        };
+      }
+
+      const invalidTier = tiers.some((tier) => !tier.label.trim() || tier.price <= 0);
+
+      if (invalidTier) {
+        return {
+          kind: 'invalidTier',
+          message: 'Each ticket tier needs a label and price greater than 0',
+        };
+      }
+
+      return null;
+    });
   });
+
+  onSubmit(): void {
+    if (!this.eventForm().valid()) {
+      return;
+    }
+
+    console.log('Submitted event:', this.eventModel());
+  }
+
+  constructor() {
+    effect(() => {
+      console.log('Event model:', this.eventModel());
+    });
+  }
 }

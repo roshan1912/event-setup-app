@@ -1,1 +1,36 @@
-<p>ticket-tiers works!</p>
+<div class="ticket-tiers">
+  <button type="button" (click)="addTier()" [disabled]="disabled()">Add Ticket Tier</button>
+
+  @for (tier of tiers(); track $index; let i = $index) {
+    <div class="tier-row">
+      <div class="field">
+        <label [for]="'label-' + i">Label</label>
+
+        <input
+          [id]="'label-' + i"
+          type="text"
+          [value]="tier.label"
+          [disabled]="disabled()"
+          (input)="updateLabel(i, $any($event.target).value)"
+          (blur)="markTouched()"
+        />
+      </div>
+
+      <div class="field">
+        <label [for]="'price-' + i">Price</label>
+
+        <input
+          [id]="'price-' + i"
+          type="number"
+          min="1"
+          [value]="tier.price"
+          [disabled]="disabled()"
+          (input)="updatePrice(i, +$any($event.target).value)"
+          (blur)="markTouched()"
+        />
+      </div>
+
+      <button type="button" (click)="removeTier(i)" [disabled]="disabled()">Remove</button>
+    </div>
+  }
+</div>

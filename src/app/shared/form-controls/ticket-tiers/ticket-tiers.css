@@ -1,0 +1,22 @@
+.ticket-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 200px;
+}
+
+.tier-row {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input {
+  padding: 8px;
+}

@@ -3,13 +3,22 @@
     <div class="field">
       <label class="label-field" for="eventName">Event Name</label>
 
-      <input id="eventName" type="text" placeholder="Enter event name" />
+      <input
+        id="eventName"
+        type="text"
+        placeholder="Enter event name"
+        [formField]="eventForm().eventName"
+      />
     </div>
 
     <div class="field">
       <label class="label-field" for="description">Description</label>
 
-      <textarea id="description" placeholder="Enter event description"></textarea>
+      <textarea
+        id="description"
+        placeholder="Enter event description"
+        [formField]="eventForm().description"
+      ></textarea>
     </div>
   </div>
 
