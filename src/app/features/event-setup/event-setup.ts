@@ -78,10 +78,4 @@ export class EventSetup {
 
     console.log('Submitted event:', this.eventModel());
   }
-
-  constructor() {
-    effect(() => {
-      console.log('Event model:', this.eventModel());
-    });
-  }
 }

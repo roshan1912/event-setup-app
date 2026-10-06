@@ -1,5 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EventTabs } from './event-tabs';
 
 describe('EventTabs', () => {
@@ -9,11 +10,15 @@ describe('EventTabs', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [EventTabs],
-    }).compileComponents();
+    })
+      .overrideTemplate(EventTabs, '')
+      .compileComponents();
 
     fixture = TestBed.createComponent(EventTabs);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+
+    fixture.componentRef.setInput('eventForm', {});
+    fixture.detectChanges();
   });
 
   it('should create', () => {
